@@ -1,14 +1,14 @@
-const MyList = ({mealPlans, addMeal}) => {
+const MyList = ({mealPlans, addMeal, deleteDay}) => {
     return <div>
         <div>
             <h1>Weekly Meal Plan Ideas</h1>
             <button className="button-add" onClick={addMeal}>Add</button>
         </div>
         <div>
-            {mealPlans.map(({title}) => (
+            {mealPlans.map(({id, title}) => (
                 <div>
                     <p>{title}</p>
-                    <button className="button-delite">Delite</button>
+                    <button className="button-delite" onClick={() => deleteDay(id)}>Delite</button>
                 </div>
             ))}
         </div>
