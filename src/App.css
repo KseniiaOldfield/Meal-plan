@@ -23,11 +23,13 @@ h1 {
   color: #40403f;
 }
 
-.button-delite {
+.button-delete {
   font-family: "Montserrat", sans-serif;
   background: none;
   border: 0;
   color: red;
+  font-size: 13px;
+  font-weight:600;
 }
 .App {
   display: flex;
@@ -57,5 +59,20 @@ textarea {
   height: 200px;
   border-radius: 20px;
   padding: 10px;
-
+}
+.selected{
+  background-color: #fad106;
+}
+.default{
+  background-color: #dcedf7;
+}
+p{
+  color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+.field{
+  font-family: "Montserrat", sans-serif;
+  color: #40403f;
+  font-size: 14px;
 }

@@ -1,14 +1,17 @@
-const MyList = ({mealPlans, addMeal, deleteDay}) => {
+const MyList = ({mealPlans, addMeal, deleteDay, selectedDay, setselectedDay}) => {
     return <div>
         <div>
             <h1>Weekly Meal Plan Ideas</h1>
             <button className="button-add" onClick={addMeal}>Add</button>
         </div>
         <div>
-            {mealPlans.map(({id, title}) => (
-                <div>
-                    <p>{title}</p>
-                    <button className="button-delite" onClick={() => deleteDay(id)}>Delite</button>
+            {mealPlans.map(({id, title, mealForADay}) => (
+                <div className={`meal ${id === selectedDay ? "selected" : "default"}`}
+                onClick={() => setselectedDay(id)}
+                >
+                    <p className="field">{title}</p>
+                    <p className="field">{mealForADay.substring(0, 60)}</p>
+                    <button className="button-delete" onClick={() => deleteDay(id)}>Delete</button>
                 </div>
             ))}
         </div>

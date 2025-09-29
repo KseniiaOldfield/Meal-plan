@@ -5,11 +5,16 @@ import MyMealsAndIngredients from './MyMealsAndIngredients';
 import uuid from 'react-uuid';
 
 function App() {
+
   const [mealPlans, setMealPlans] = useState([])
+  const [selectedDay, setselectedDay] = useState(false);
+
   const addMeal = () => {
     const newMeal = {
       title:"Today is...",
-      id: uuid()
+      id: uuid(),
+      mealForADay:"",
+      ingredients: ""
     }
     setMealPlans([newMeal, ...mealPlans])
     console.log (newMeal)
@@ -18,11 +23,30 @@ function App() {
   const deleteDay = (mealId) => {
     setMealPlans(mealPlans.filter(({id}) => id !== mealId))
   }
+
+  const updateDay = (myUpdateMeal) => {
+    const updatedMeals = mealPlans.map((mealPlan) => {
+      if (mealPlan.id === myUpdateMeal.id) {
+        return myUpdateMeal
+      }
+      return mealPlan;
+    })
+    setMealPlans(updatedMeals)
+  }
+
+  const getActiveMeal = () => {
+    return mealPlans.find(({id}) => id === selectedDay)
+  }
+
   return (
     <div className="App">
-      <MyList mealPlans={mealPlans} addMeal={addMeal} deleteDay={deleteDay}/>
-      <MyMealsAndIngredients/>
-
+      <MyList mealPlans={mealPlans} 
+      addMeal={addMeal} 
+      deleteDay={deleteDay}
+      selectedDay={selectedDay}
+      setselectedDay={setselectedDay}
+      />
+      <MyMealsAndIngredients selectedDay={getActiveMeal()} updateDay={updateDay}/>
     </div>
   );
 }
