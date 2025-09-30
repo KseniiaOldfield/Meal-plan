@@ -9,7 +9,6 @@ const MyMealsAndIngredients = ({selectedDay, updateDay}) => {
    
     if(!selectedDay) return <p>Plan your week ahead of time!</p>
     return <div className="whole-plan">
-        <div className="meal-editing">
 
             <input
             type="text"
@@ -34,7 +33,6 @@ const MyMealsAndIngredients = ({selectedDay, updateDay}) => {
             onChange = {(e) => editMyMeal("ingredients", e.target.value)}
             />
         </div>
-    </div>
 }
 
 export default MyMealsAndIngredients;

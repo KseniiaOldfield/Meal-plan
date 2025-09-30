@@ -2,9 +2,10 @@ body {
   background: url(keto.jpg) ;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
-h1 {
+ h1 {
   font-family: "Montserrat", sans-serif;
   background-color: #dcedf7;
   border-radius: 20px;
@@ -22,14 +23,16 @@ h1 {
   font-weight: 500;
   color: #40403f;
 }
-
 .button-delete {
   font-family: "Montserrat", sans-serif;
   background: none;
   border: 0;
-  color: red;
+  color: rgb(249, 58, 15);
   font-size: 13px;
   font-weight:600;
+}
+.button-delete:hover {
+  color: rgb(140, 1, 26);
 }
 .App {
   display: flex;
@@ -40,7 +43,6 @@ h1 {
   width: 70%;
   height: 100vh;
 }
-
 .myInput {
   width: 70%;
   height: 20px;
@@ -49,7 +51,6 @@ h1 {
   display: block;
   margin-top: 30px;
 }
-
 textarea {
   font-family: "Montserrat", sans-serif;
   display: block;
@@ -75,4 +76,61 @@ p{
   font-family: "Montserrat", sans-serif;
   color: #40403f;
   font-size: 14px;
+} 
+
+@media (max-width: 1430px) {
+  .App {
+    gap: 25px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .meal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .field {
+    white-space: normal;
+    font-size: 15px;
+  }
+
+  .button-delete {
+    align-self: flex-end;
+    margin-top: 5px;
+  }
+
+  .whole-plan {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .myInput,
+  textarea {
+    font-size: 15px;
+    padding: 9px;
+    width: 39vh;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 19px;
+  }
+
+  .button-add {
+    width: 100%;
+  }
+
+  .myInput,
+  textarea {
+    font-size: 14px;
+    padding: 8px;
+    min-height: 80px;
+  }
 }
