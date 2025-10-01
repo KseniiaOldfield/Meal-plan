@@ -1,8 +1,8 @@
 const MyList = ({mealPlans, addMeal, deleteDay, selectedDay, setselectedDay}) => {
     return <div>
         <div>
-            <h1>Weekly Meal Plan Ideas</h1>
-            <button className="button-add" onClick={addMeal}>Add</button>
+            <h1>Идеи Плана Питания</h1>
+            <button className="button-add" onClick={addMeal}>Добавить</button>
         </div>
         <div>
             {mealPlans.map(({id, title, mealForADay}) => (
@@ -11,7 +11,7 @@ const MyList = ({mealPlans, addMeal, deleteDay, selectedDay, setselectedDay}) =>
                 >
                     <p className="field">{title}</p>
                     <p className="field">{mealForADay.substring(0, 60)}</p>
-                    <button className="button-delete" onClick={() => deleteDay(id)}>Delete</button>
+                    <button className="button-delete" onClick={() => deleteDay(id)}>Удалить</button>
                 </div>
             ))}
         </div>
