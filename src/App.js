@@ -16,12 +16,13 @@ function App() {
 
   const addMeal = () => {
     const newMeal = {
-      title:"Укажите дату...",
+      title:"Укажитe дату...",
       id: uuid(),
       mealForADay:"",
       ingredients: ""
     }
     setMealPlans([newMeal, ...mealPlans])
+    console.log (newMeal)
   }
 
   const deleteDay = (mealId) => {
